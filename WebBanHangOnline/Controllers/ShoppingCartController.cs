@@ -189,7 +189,9 @@ namespace WebBanHangOnline.Controllers
                 if (cart == null)
                 {
                     cart = new ShoppingCart();
+                    Session["Cart"] = cart;
                 }
+                cart.UserId = User.Identity.GetUserId();
                 ShoppingCartItem item = new ShoppingCartItem //chứa thông tin sản phẩm
                 {
                     ProductId = checkProduct.Id,

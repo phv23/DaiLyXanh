@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +8,9 @@ namespace WebBanHangOnline.Models
 {
     public class ShoppingCart
     {
+        [Key]
+        public int Id { get; set; }
+        public string UserId { get; set; }
         public List<ShoppingCartItem> Items { get; set; }
         public ShoppingCart()
         {
@@ -64,6 +68,8 @@ namespace WebBanHangOnline.Models
 
     public class ShoppingCartItem
     {
+        [Key]
+        public int Id { get; set; }       
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string Alias { get; set; }
