@@ -15,8 +15,9 @@ namespace WebBanHangOnline.Models
 
         public void AddToCart(ShoppingCartItem item,int Quantity)
         {
-            var checkExits = Items.FirstOrDefault(x => x.ProductId == item.ProductId);
-            if (checkExits != null)
+            //Kiểm tra sản phẩm có trong líst chưa
+            var checkExits = Items.FirstOrDefault(x => x.ProductId == item.ProductId); 
+            if (checkExits != null)//
             {
                 checkExits.Quantity += Quantity;
                 checkExits.TotalPrice = checkExits.Price * checkExits.Quantity;
